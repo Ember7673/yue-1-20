@@ -15,21 +15,21 @@
                 </router-link>
             </li>
             <li class="mui-table-view-cell">
-                <a class="mui-navigate-right">
+                <router-link to="/selfContent/selfEmail" class="mui-navigate-right">
                     邮箱
                     <span class="rightInfo">未设置</span>
-                </a>
+                </router-link>
             </li>
             <li class="mui-table-view-cell">
-                <a class="mui-navigate-right">
+                <router-link to="/selfContent/selfTel" class="mui-navigate-right">
                     绑定手机
                     <span class="rightInfo">13012345678</span>
-                </a>
+                </router-link>
             </li>
             <li class="mui-table-view-cell">
-                <a class="mui-navigate-right">
+                <router-link to="/selfContent/selfAddress" class="mui-navigate-right">
                     收获地址
-                </a>
+                </router-link>
             </li>
       </ul>
   </div>

@@ -8,6 +8,9 @@ import selfCenter from "@/components/tab/selfCenter.vue"
 import search from "@/components/search.vue"
 import selfInfo from "@/components/self/selfInfo.vue"
 import selfNickname from "@/components/self/selfNickname.vue"
+import selfEmail from "@/components/self/selfEmail.vue"
+import selfTel from "@/components/self/selfTel.vue"
+import selfAddress from "@/components/self/selfAddress.vue"
 
 Vue.use(Router)
 
@@ -38,6 +41,15 @@ export default new Router({
     },
     {
       path: '/selfContent/selfNickname', name: 'selfNickname', component: selfNickname
-    }
+    },
+    {
+      path: '/selfContent/selfEmail', name: 'selfEmail', component:selfEmail
+    },
+    {
+      path: '/selfContent/selfTel', name: 'selfTel', component: selfTel
+    },
+    {
+      path: '/selfContent/selfAddress', name: 'selfAddress', component: selfAddress
+    },
   ]
 })
