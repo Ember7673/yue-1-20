@@ -14,6 +14,7 @@ import selfAddress from "@/components/self/selfAddress.vue"
 import addAddress from "@/components/self/addAddress.vue"
 import choosePlace from "@/components/self/choosePlace.vue"
 
+
 Vue.use(Router)
 
 export default new Router({
@@ -58,6 +59,6 @@ export default new Router({
     },
     {
       path: '/selfContent/choosePlace', name: 'choosePlace', component: choosePlace
-    }
+    },
   ]
 })

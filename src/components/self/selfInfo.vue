@@ -5,7 +5,7 @@
                 <a class="mui-navigate-right">
                     <input type="file" name="avatar" id="avatar">
                     <span>头像</span>
-                    <img class="avatarImg" src="#" alt="">
+                    <img class="avatarImg" src="../../../img/touxiang.jpg" alt="">
                 </a>
             </li>
             <li class="mui-table-view-cell">
