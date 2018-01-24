@@ -1,85 +1,113 @@
 <template>
-  <div>
-      <ul class="mui-table-view">
-        <li class="mui-table-view-cell avatar">
-                <a class="mui-navigate-right">
-                    <input type="file" name="avatar" id="avatar">
-                    <span>头像</span>
+    <div class="selfInfoContainer">
+        <ul>
+            <li class="avatar">
+                <input type="file">
+                <label for="">头像</label>
+                <div>
                     <img class="avatarImg" src="../../../img/touxiang.jpg" alt="">
-                </a>
+                    <img class="right" src="http://wap.yueshijue.com/selfCenter/assets/img/mine_page/right_arrow.png" alt="">
+                </div>
             </li>
-            <li class="mui-table-view-cell">
-                <router-link to="/selfContent/selfNickname" class="mui-navigate-right">
-                    昵称
-                    <span class="rightInfo">13012345678</span>
-                </router-link>
+            <li>
+                <list v-for="(item,i) in userInfos" :key="i" 
+                :msg="userInfos[i].nickName" 
+                :self-info="userInfos[i].selfInfos"
+                :url="userInfos[i].url"></list>
             </li>
-            <li class="mui-table-view-cell">
-                <router-link to="/selfContent/selfEmail" class="mui-navigate-right">
-                    邮箱
-                    <span class="rightInfo">未设置</span>
-                </router-link>
-            </li>
-            <li class="mui-table-view-cell">
-                <router-link to="/selfContent/selfTel" class="mui-navigate-right">
-                    绑定手机
-                    <span class="rightInfo">13012345678</span>
-                </router-link>
-            </li>
-            <li class="mui-table-view-cell">
-                <router-link to="/selfContent/selfAddress" class="mui-navigate-right">
-                    收获地址
-                </router-link>
-            </li>
-      </ul>
-  </div>
+        </ul>
+    </div>
 </template>
 
 <script>
+import store from '@/vuex/store.js'
+import list from '../../components/subComponets/list.vue'
 export default {
 name: 'selfInfo',
 data() {
     return {
-    
+        userInfos: [
+            {
+                nickName: '昵称',
+                selfInfos: this.$store.state.selfInfo.nickName,
+                url: '/selfContent/selfNickname',
+            },
+            {
+                nickName: '邮箱',
+                selfInfos: this.$store.state.selfInfo.email,
+                url: '/selfContent/selfEmail',
+            },
+            {
+                nickName: '绑定手机',
+                selfInfos: this.$store.state.selfInfo.telephone,
+                url: '/selfContent/selfTel',
+            },
+            {
+                nickName: '收货地址',
+                selfInfos: '',
+                url: '/selfContent/selfAddress',
+            },
+        ]
     }
+},
+created() {
+    
 },
 methods: {
    
+},
+components: {
+    list
 }
 }
 </script>
 
 <style lang="scss" scoped>
-.rightInfo{
-    font-size: 14px;
-    color:#ccc;
-    position: absolute;
-    top: 10px;
-    right: 39px;
-}
+.selfInfoContainer {
+    background-color: #fff;
+        .avatar {
+            width: 100%;
+            height: 100px;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+            input {
+                position: absolute;
+                opacity: 0;
+                width: 100%;
+                height: 100px;
+            }
+            label {
+                width: 100px;
+                line-height: 70px;
+            }
+             div {
+                .avatarImg{
+                    width: 67px;
+                    height: 67px;
+                    margin-right: 35px;
+                }
+                img {
+                    vertical-align: middle;
+                }
+            }
+                .avatarImg{
+                    width: 67px;
+                    height: 67px;
+                    margin-right: 35px;
+                }
+            }
+ 
 
-.avatar{
-    // display: flex;
-    // justify-content: space-between;
-    width: 100%;
-    // height: 67px;
-    input{
-        opacity: 0;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+    a{
+        color: #000;
     }
-    span{
-        line-height: 67px;
+    .right{
+        width: 6px;
+        height: auto;
     }
-    .avatarImg{
-        width: 67px;
-        height: 67px;
-        float: right;
-        margin-right: 35px;
-    }
+
 }
 
 

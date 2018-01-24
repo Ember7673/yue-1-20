@@ -1,0 +1,65 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+body {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #333;
+  font-size: 14px;
+  font-family: 'Microsoft Yahei', Helvetica, Arial, sans-serif;
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+}
+h1, h2, h3, h4, ul, p {
+  margin: 0;
+  padding: 0
+}
+ul li {
+  list-style: none
+}
+a {
+  text-decoration: none;
+  color: #337ab7;
+}
+a:focus, a:hover {
+  color: #23527c;
+}
+i, em {
+  font-style: normal
+}
+input {
+  border: none;
+  outline: none;
+}
+.clearfix {
+  &::before, &::after {
+    display: table;
+    content: '';
+    }
+  &::after {
+    clear: both;
+  }
+}
+.text-center {
+  text-align: center
+}
+.text-right {
+  text-align: right
+}
+.text-left {
+  text-align: left
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.transition {
+  transition: all .3s ease;
+}
+.bg-white {
+  background: #fff;
+}

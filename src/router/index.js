@@ -13,6 +13,8 @@ import selfTel from "@/components/self/selfTel.vue"
 import selfAddress from "@/components/self/selfAddress.vue"
 import addAddress from "@/components/self/addAddress.vue"
 import choosePlace from "@/components/self/choosePlace.vue"
+import test from "@/components/test.vue"
+import list from "@/components/subComponets/list.vue"
 
 
 Vue.use(Router)
@@ -60,5 +62,11 @@ export default new Router({
     {
       path: '/selfContent/choosePlace', name: 'choosePlace', component: choosePlace
     },
+    {
+      path: '/test', name: 'test', component: test
+    },
+    {
+      path: '/list', name: 'list', component: list
+    }
   ]
 })

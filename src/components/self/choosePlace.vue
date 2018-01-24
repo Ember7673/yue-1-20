@@ -5,28 +5,53 @@
                     <span>选择地址</span>
                     <mt-button type="danger" size="small" @click="cancle">取消</mt-button>
                 </div>
-                <div class="chooseBody">
-                    <input type="text" name="" id="" placeholder="选择省份">
-                    <input type="number" name="" id="" placeholder="选择城市">
-                    <input type="number" name="" id="" placeholder="选择区域">
-                </div>
+                <mt-picker :slots="slots" @change="onValuesChange"></mt-picker>
                 <mt-button type="primary" size="large">确认并选择</mt-button>
         </div>
     </transition>
 </template>
 
 <script>
+import area from './area.json'
 export default {
 name: 'choosePlace',
 data() {
     return {
-       
+       slots: [
+        {
+            flex: 1,
+            values: Object.keys(area.t.areaList[0]),
+            className: 'slot1',
+            textAlign: 'center'
+            }, {
+            divider: true,
+            content: '-',
+            className: 'slot2'
+            }, {
+            flex: 1,
+            values: Object.values(area.t.areaList[0])[0],
+            className: 'slot3',
+            textAlign: 'center'
+        }
+      ]
     }
 },
 methods: {
     cancle() {
         this.$router.push('/selfContent/addAddress')
-    }
+    },
+    onValuesChange(picker, values) {
+    
+        console.log(picker.setSlotValue(1))
+
+    console.log(picker)
+    console.log(values[0])
+    console.log(Object.keys(area))
+    console.log(values[1])
+    },
+},
+components: {
+    area
 }
 }
 </script>
